@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="zhchronos" />
+		<Option pch_mode="2" />
+		<Option compiler="msp430-gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/zhchronos.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="msp430-gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/zhchronos.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="msp430-gcc" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mmcu=cc430f6137" />
+			<Add option="-fexpensive-optimizations" />
+			<Add option="-Os" />
+			<Add option="-w" />
+			<Add option="-D__MSP430_6137__" />
+			<Add option="-D__CC430F6137__" />
+			<Add option="-DMRFI_CC430" />
+			<Add option="-DISM_EU" />
+			<Add option="-DMAX_APP_PAYLOAD=19" />
+			<Add option="-DMAX_NWK_PAYLOAD=9" />
+			<Add option="-DMAX_HOPS=3" />
+			<Add option="-DDEFAULT_JOIN_TOKEN=0x05060708" />
+			<Add option="-DDEFAULT_LINK_TOKEN=0x01020304" />
+			<Add option="-DMAX_HOPS_FROM_AP=1" />
+			<Add option="-DAPP_AUTO_ACK" />
+			<Add option="-DSW_TIMER" />
+			<Add option="-DNUM_CONNECTIONS=1" />
+			<Add option="-DSIZE_INFRAME_Q=2" />
+			<Add option="-DSIZE_OUTFRAME_Q=2" />
+			<Add option="-DEND_DEVICE" />
+			<Add option='-DTHIS_DEVICE_ADDRESS=&quot;{0x79, 0x56, 0x34, 0x12}&quot;' />
+			<Add directory="./include" />
+			<Add directory="./driver" />
+			<Add directory="./logic" />
+			<Add directory="./simpliciti" />
+			<Add directory="./simpliciti/components/bsp" />
+			<Add directory="./simpliciti/components/mrfi" />
+			<Add directory="./simpliciti/components/nwk" />
+			<Add directory="./simpliciti/components/nwk_applications" />
+		</Compiler>
+		<Linker>
+			<Add option="-mmcu=cc430f6137" />
+			<Add option="-s" />
+			<Add option="-Os" />
+		</Linker>
+		<Unit filename="driver/adc12.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/adc12.h" />
+		<Unit filename="driver/as.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/as.h" />
+		<Unit filename="driver/buzzer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/buzzer.h" />
+		<Unit filename="driver/cma_as.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/cma_as.h" />
+		<Unit filename="driver/cma_ps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/cma_ps.h" />
+		<Unit filename="driver/display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/display.h" />
+		<Unit filename="driver/pmm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/pmm.h" />
+		<Unit filename="driver/ports.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/ports.h" />
+		<Unit filename="driver/ps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/ps.h" />
+		<Unit filename="driver/radio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/radio.h" />
+		<Unit filename="driver/rf1a.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/rf1a.h" />
+		<Unit filename="driver/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="driver/timer.h" />
+		<Unit filename="include/forgcc.h" />
+		<Unit filename="include/project.h" />
+		<Unit filename="logic/acceleration.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/acceleration.h" />
+		<Unit filename="logic/alarm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/alarm.h" />
+		<Unit filename="logic/altitude.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/altitude.h" />
+		<Unit filename="logic/battery.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/battery.h" />
+		<Unit filename="logic/clock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/clock.h" />
+		<Unit filename="logic/date.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/date.h" />
+		<Unit filename="logic/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/menu.h" />
+		<Unit filename="logic/rfbsl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/rfbsl.h" />
+		<Unit filename="logic/rfsimpliciti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/rfsimpliciti.h" />
+		<Unit filename="logic/stopwatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/stopwatch.h" />
+		<Unit filename="logic/temperature.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/temperature.h" />
+		<Unit filename="logic/test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/test.h" />
+		<Unit filename="logic/user.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logic/user.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/applications/main_ED_BM.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/bsp/bsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/bsp/bsp.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_board_defs.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_button_defs.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_buttons.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_config.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_driver_defs.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_generic_buttons.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_generic_leds.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_led_defs.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_leds.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_macros.h" />
+		<Unit filename="simpliciti/components/bsp/bsp_msp430_defs.h" />
+		<Unit filename="simpliciti/components/bsp/mrfi_board_defs.h" />
+		<Unit filename="simpliciti/components/mrfi/mrfi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/mrfi/mrfi.h" />
+		<Unit filename="simpliciti/components/mrfi/mrfi_defs.h" />
+		<Unit filename="simpliciti/components/mrfi/mrfi_radio_interface.h" />
+		<Unit filename="simpliciti/components/mrfi/smartrf_CC430.h" />
+		<Unit filename="simpliciti/components/nwk/nwk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk/nwk.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_QMgmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk/nwk_QMgmt.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk/nwk_api.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_app.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_frame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk/nwk_frame.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_globals.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk/nwk_globals.h" />
+		<Unit filename="simpliciti/components/nwk/nwk_types.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_freq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_freq.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_ioctl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_ioctl.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_join.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_join.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_link.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_link.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_mgmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_mgmt.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_ping.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_ping.h" />
+		<Unit filename="simpliciti/components/nwk_applications/nwk_security.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="simpliciti/components/nwk_applications/nwk_security.h" />
+		<Unit filename="simpliciti/simpliciti.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
