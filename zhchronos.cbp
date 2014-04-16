@@ -23,10 +23,10 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-mmcu=cc430f6137" />
 			<Add option="-fexpensive-optimizations" />
 			<Add option="-Os" />
 			<Add option="-w" />
+			<Add option="-mmcu=cc430f6137" />
 			<Add option="-D__MSP430_6137__" />
 			<Add option="-D__CC430F6137__" />
 			<Add option="-DMRFI_CC430" />
@@ -54,10 +54,16 @@
 			<Add directory="./simpliciti/components/nwk_applications" />
 		</Compiler>
 		<Linker>
-			<Add option="-mmcu=cc430f6137" />
 			<Add option="-s" />
+			<Add option="-mmcu=cc430f6137" />
 			<Add option="-Os" />
 		</Linker>
+		<ExtraCommands>
+			<Add before="rm $(TARGET_OUTPUT_DIR)*" />
+			<Add after="msp430-size $(TARGET_OUTPUT_FILE)" />
+			<Add after="msp430-objcopy -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
+			<Add after="srec_cat -O $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).txt -TITXT $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex -I" />
+		</ExtraCommands>
 		<Unit filename="driver/adc12.c">
 			<Option compilerVar="CC" />
 		</Unit>
