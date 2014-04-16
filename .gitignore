@@ -4,4 +4,7 @@ bin
 *.o
 *.elf
 *.hex
+*.layout
+*.depend
 zhchronos.txt
+
