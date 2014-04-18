@@ -48,6 +48,7 @@
 
 // logic
 #include "menu.h"
+#include "countdowntimer.h"
 #include "clock.h"
 #include "user.h"
 //#include "bluerobin.h"
@@ -145,6 +146,7 @@ void clock_tick(void)
             }
         }
     }
+     cdtimer_tick();
 }
 
 // *************************************************************************************************

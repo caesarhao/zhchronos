@@ -100,6 +100,7 @@
 #include "date.h"
 #include "alarm.h"
 #include "stopwatch.h"
+#include "countdowntimer.h"
 #include "battery.h"
 #include "temperature.h"
 #include "altitude.h"
@@ -382,6 +383,10 @@ void init_global_variables(void)
 
     // Reset stopwatch
     reset_stopwatch();
+
+    //Set cdtimer to a 5:00 minute default
+    memcpy(scdtimer.defaultTime, "000500", sizeof(scdtimer.time));
+    reset_cdtimer();
 
     // Reset altitude measurement
     reset_altitude_measurement();

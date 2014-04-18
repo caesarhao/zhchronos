@@ -78,6 +78,7 @@ extern const struct menu menu_L1_Acceleration;
 // Line2 navigation
 extern const struct menu menu_L2_Date;
 extern const struct menu menu_L2_Stopwatch;
+extern const struct menu menu_L2_cdtimer;
 extern const struct menu menu_L2_Battery;
 extern const struct menu menu_L2_Rf;
 extern const struct menu menu_L2_Ppt;

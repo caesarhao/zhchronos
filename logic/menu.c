@@ -51,6 +51,7 @@
 #include "date.h"
 #include "alarm.h"
 #include "stopwatch.h"
+#include "countdowntimer.h"
 #include "temperature.h"
 #include "altitude.h"
 #include "battery.h"
@@ -199,7 +200,17 @@ const struct menu menu_L2_Stopwatch = {
     FUNCTION(mx_stopwatch),           // sub menu function
     FUNCTION(display_stopwatch),      // display function
     FUNCTION(update_stopwatch),       // new display data
-    &menu_L2_Battery,
+    &menu_L2_cdtimer,
+};
+
+// Line2 - Countdowntimer
+const struct menu menu_L2_cdtimer =
+{
+	FUNCTION(sx_cdtimer),		// direct function
+	FUNCTION(mx_cdtimer),		// sub menu function
+	FUNCTION(display_cdtimer),  // display function
+	FUNCTION(update_time),	    // new display data
+	&menu_L2_Battery,
 };
 
 // Line2 - Battery
