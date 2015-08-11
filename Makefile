@@ -28,17 +28,26 @@ TARGET = zhchronos
 
 MCU    = cc430f6137
 
-SOURCES = 
-
+SOURCES = $(wildcard *.c) $(wildcard driver/*.c) $(wildcard logic/*.c) $(wildcard simpliciti/*.c)
+SOURCES += $(wildcard simpliciti/applications/*.c) $(wildcard simpliciti/components/bsp/*.c) $(wildcard simpliciti/components/mrfi/*.c) 
+SOURCES += $(wildcard simpliciti/components/nwk/*.c) $(wildcard simpliciti/components/nwk_applications/*.c)
 # all the libraries here
 LIBS = 
 # Include are located in the following directory
-INCLUDES = -IInclude
+INCLUDEDIRS = include driver logic simpliciti simpliciti/components/bsp simpliciti/components/mrfi 
+INCLUDEDIRS += simpliciti/components/nwk simpliciti/components/nwk_applications
+
+INCLUDES = $(addprefix -I, $(INCLUDEDIRS))
 # Add or subtract whatever MSPGCC flags you want. There are plenty more
 #######################################################################################
-CFLAGS   = -mmcu=$(MCU) -g -Os -Wall -Wunused $(INCLUDES)
+CFLAGS   = -mmcu=$(MCU) -mlarge -ffunction-sections -fdata-sections -Os -Wall -Wunused $(INCLUDES)
+CFLAGS	+= -D__CC430F6137__
+CFLAGS	+= -DMRFI_CC430 -DISM_EU -DMAX_APP_PAYLOAD=19 -DMAX_NWK_PAYLOAD=9 -DMAX_HOPS=3 -DMAX_HOPS_FROM_AP=1
+CFLAGS	+= -DDEFAULT_JOIN_TOKEN=0x05060708 -DDEFAULT_LINK_TOKEN=0x01020304 -DAPP_AUTO_ACK -DSW_TIMER
+CFLAGS	+= -DNUM_CONNECTIONS=1 -DSIZE_INFRAME_Q=2 -DSIZE_OUTFRAME_Q=2
+CFLAGS	+= -DEND_DEVICE -DTHIS_DEVICE_ADDRESS="{0x79, 0x56, 0x34, 0x12}"
 ASFLAGS  = -mmcu=$(MCU) -x assembler-with-cpp -Wa,-gstabs
-LDFLAGS  = -mmcu=$(MCU) -Wl,-Map=$(TARGET).map
+LDFLAGS  = -mmcu=$(MCU) -mlarge -ffunction-sections -fdata-sections -Wl,-Map=$(TARGET).map
 ########################################################################################
 
 DEPEND = $(SOURCES:.c=.d)

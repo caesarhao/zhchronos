@@ -155,8 +155,7 @@ void close_radio(void)
 // @param       none
 // @return      none
 // *************************************************************************************************
-#pragma vector=CC1101_VECTOR
-__interrupt void radio_ISR(void)
+MAKE_INTERRUPT(CC1101_VECTOR, radio_ISR)
 {
     u8 rf1aivec = RF1AIV;
 

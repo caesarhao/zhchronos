@@ -22,5 +22,13 @@ typedef double 	f64;
 // Macro for button IRQ
 #define IRQ_TRIGGERED(flags, bit)               ((flags & bit) == bit)
 
+// Macro for define an interrupt
+// elf-gcc
+
+#define MAKE_INTERRUPT(v,handle) void __attribute__((__interrupt__(v))) handle(void)
+
+// gcc
+//#define MAKE_INTERRUPT(v,handle) #pragma vector=v __interrupt void handle(void)
+
 #endif
 

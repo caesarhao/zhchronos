@@ -251,8 +251,7 @@ void Timer0_A4_Delay(u16 ticks)
 // @param       none
 // @return      none
 // *************************************************************************************************
-#pragma vector = TIMER0_A0_VECTOR
-__interrupt void TIMER0_A0_ISR(void)
+MAKE_INTERRUPT(TIMER0_A0_VECTOR, TIMER0_A0_ISR)
 {
     static u8 button_lock_counter = 0;
 
@@ -521,8 +520,7 @@ __interrupt void TIMER0_A0_ISR(void)
 // @param       none
 // @return      none
 // *************************************************************************************************
-#pragma vector = TIMER0_A1_VECTOR
-__interrupt void TIMER0_A1_5_ISR(void)
+MAKE_INTERRUPT(TIMER0_A1_VECTOR, TIMER0_A1_5_ISR)
 {
     u16 value = 0;
 

@@ -109,10 +109,10 @@
 
 #define __bsp_ISTATE_T__ uint16_t
 #define __bsp_ISR_FUNCTION__(f,v) interrupt (v) f(void)
-#define __bsp_ENABLE_INTERRUPTS__() eint()
-#define __bsp_DISABLE_INTERRUPTS__() dint()
-#define __bsp_INTERRUPTS_ARE_ENABLED__() (READ_SR & 0x8)
-#define __bsp_GET_ISTATE__() (READ_SR & 0x8)
+#define __bsp_ENABLE_INTERRUPTS__() _enable_interrupts()
+#define __bsp_DISABLE_INTERRUPTS__() _disable_interrupts()
+#define __bsp_INTERRUPTS_ARE_ENABLED__() (_get_interrupt_state() & 0x8)
+#define __bsp_GET_ISTATE__() (_get_interrupt_state() & 0x8)
 #define __bsp_RESTORE_ISTATE__(x) st(if((x&GIE))_BIS_SR(GIE);)
 #else
 #error "ERROR: Unknown compiler."

@@ -114,8 +114,7 @@ void init_buttons(void)
 // @param       none
 // @return      none
 // *************************************************************************************************
-#pragma vector=PORT2_VECTOR
-__interrupt void PORT2_ISR(void)
+MAKE_INTERRUPT(PORT2_VECTOR, PORT2_ISR)
 {
     // Clear flags
     u8 int_flag, int_enable;
